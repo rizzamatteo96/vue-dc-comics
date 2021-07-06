@@ -85,6 +85,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
+      text-transform: uppercase;
 
       li{
         display: inline-block;
