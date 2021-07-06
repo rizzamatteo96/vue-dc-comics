@@ -45,7 +45,16 @@
     <!-- inizio parte bottom -->
     <div class="bottom">
       <div class="container">
+        <button class="sign">Sign-up now!</button>
 
+        <!-- inizio sezione social -->
+        <div class="social">
+          <ul>
+            <li><a class="follow" href="#">Follow us</a></li>
+            <li v-for="(item,i) in socialImg" :key="i"><a :href="item.link"><img :src="getImgUrl(item.img)" :alt="item.alt"></a></li>
+          </ul>
+        </div>
+        <!-- fine sezione social -->
       </div>
     </div>
     <!-- fine parte bottom -->
@@ -165,7 +174,39 @@
             text : 'DC Power Visa',
             link : '#'
           }
+        ],
+        socialImg : [
+          {
+            img : 'facebook',
+            alt : 'facebook',
+            link : '#'
+          },
+          {
+            img : 'twitter',
+            alt : 'twitter',
+            link : '#'
+          },
+          {
+            img : 'youtube',
+            alt : 'youtube',
+            link : '#'
+          },
+          {
+            img : 'pinterest',
+            alt : 'pinterest',
+            link : '#'
+          },
+          {
+            img : 'periscope',
+            alt : 'periscope',
+            link : '#'
+          },
         ]
+      }
+    },
+    methods : {
+      getImgUrl(pic) {
+        return require('../assets/footer-' + pic + '.png')
       }
     }
   }
@@ -174,6 +215,14 @@
 
 <style lang="scss" scoped>
   @import '@/style/variables.scss';
+
+  ul{
+    list-style: none;
+
+    li a{
+      text-decoration: none;
+    }
+  }
 
   .top{
     background-image: url('../assets/footer-bg.jpg');
@@ -196,14 +245,10 @@
         }
   
         ul{
-          list-style: none;
-          font-size: 1rem;
-  
           li{
             padding-top: 5px;
   
             a{
-              text-decoration: none;
               color: gray;
             }
           } 
@@ -227,5 +272,49 @@
       clear: both;
     }
 
+  }
+
+  .bottom{
+    background-color: #303030;
+    padding: 40px 0;
+
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button{
+        padding: 10px 15px;
+        border-radius: 0;
+        background-color: unset;
+        border: 2px solid $dc-color;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      a.follow{
+        color: $dc-color;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-right: 15px;
+        vertical-align: middle;
+      }
+
+      ul{
+
+        li{
+          display: inline-block;
+          padding: 0 5px;
+
+          img{
+            vertical-align: middle;
+            height: 2rem;
+          }
+        }
+      }
+    }
   }
 </style>
