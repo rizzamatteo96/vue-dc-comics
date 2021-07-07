@@ -7,8 +7,14 @@
         <!-- fine jumbotron -->
 
         <div class="container">
-          <h2> Content goes here </h2>
-          <ImgCard v-for="(card,i) in cards" :key="i" :cardData="card"/>
+          <!-- titolo sezione -->
+          <div class="section-title">Current series</div>
+          <!-- sezione delle card -->
+          <div class="card-section">
+            <ImgCard v-for="(card,i) in cards" :key="i" :cardData="card"/>
+          </div>
+          <!-- pulsante viewMore card -->
+          <button class="view-more">Load more</button>
         </div>
       </div>
       
@@ -81,21 +87,56 @@ import DcItems from '@/data/DcItems.js';
 
   .content,
   .items-shop{
-    padding: 40px 0;
     color: white;
   }
 
   .content{
     background-color: #1c1c1c;
-
+    
     .jumbo{
       height: 400px;
       background-image: url('../assets/img/jumbotron.jpg');
       background-size: cover;
     }
+
+    .container{
+      position: relative;
+      padding-bottom: 40px;
+
+      .section-title,
+      .view-more{
+        padding: 15px 20px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: $dc-color;
+      }
+
+      .section-title{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .card-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .view-more{
+        display: block;
+        margin: 0 auto;
+        color: white;
+      }
+
+
+    }
   }
 
   .items-shop{
+    padding: 40px 0;
     background-color: $dc-color;
 
     ul{
