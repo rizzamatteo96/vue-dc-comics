@@ -206,7 +206,7 @@
     },
     methods : {
       getImgUrl(pic) {
-        return require('../assets/footer-' + pic + '.png')
+        return require('../assets/img/footer-' + pic + '.png')
       }
     }
   }
@@ -225,7 +225,7 @@
   }
 
   .top{
-    background-image: url('../assets/footer-bg.jpg');
+    background-image: url('../assets/img/footer-bg.jpg');
     background-position: center;
     background-size: cover;
     height: 400px;
@@ -260,7 +260,7 @@
         float: right;
         height: 100%;
         width: 50%;
-        background-image: url('../assets/dc-logo-bg.png');
+        background-image: url('../assets/img/dc-logo-bg.png');
         background-size: cover;
         background-position: center;
       }

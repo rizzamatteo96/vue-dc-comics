@@ -3,7 +3,7 @@
     <div class="container">
 
       <!-- logo DC -->
-      <img src="../assets/dc-logo.png" alt="dc logo">
+      <img src="../assets/img/dc-logo.png" alt="dc logo">
 
       <!-- inizio navbar -->
       <nav>

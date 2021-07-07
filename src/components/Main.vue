@@ -8,6 +8,7 @@
 
         <div class="container">
           <h2> Content goes here </h2>
+          <ImgCard v-for="(card,i) in cards" :key="i" :cardData="card"/>
         </div>
       </div>
       
@@ -26,8 +27,14 @@
 
 
 <script>
+import ImgCard from '@/components/ImgCard.vue';
+import DcItems from '@/data/DcItems.js';
+
   export default {
     name: 'Main',
+    components: {
+      ImgCard
+    },
     data(){
       return{
         items : [
@@ -56,12 +63,13 @@
             alt : 'Dc power visa',
             text : 'Dc power visa'
           },
-        ]
+        ],
+        cards : DcItems
       }
     },
     methods : {
       getImgUrl(pic) {
-        return require('../assets/' + pic)
+        return require('../assets/img/' + pic)
       }
     }
   }
@@ -78,9 +86,11 @@
   }
 
   .content{
+    background-color: #1c1c1c;
+
     .jumbo{
       height: 400px;
-      background-image: url('../assets/jumbotron.jpg');
+      background-image: url('../assets/img/jumbotron.jpg');
       background-size: cover;
     }
   }
