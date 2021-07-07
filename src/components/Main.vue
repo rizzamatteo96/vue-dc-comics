@@ -2,6 +2,10 @@
   <main>
     
       <div class="content">
+        <!-- inizio jumbotron -->
+        <div class="jumbo"></div>
+        <!-- fine jumbotron -->
+
         <div class="container">
           <h2> Content goes here </h2>
         </div>
@@ -74,7 +78,11 @@
   }
 
   .content{
-    background-color: black;
+    .jumbo{
+      height: 400px;
+      background-image: url('../assets/jumbotron.jpg');
+      background-size: cover;
+    }
   }
 
   .items-shop{
